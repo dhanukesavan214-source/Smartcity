@@ -5,9 +5,11 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App.tsx';
 import './index.css';
 
+const isGitHubPagesPath = window.location.pathname === '/Smartcity' || window.location.pathname.startsWith('/Smartcity/');
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter basename="/Smartcity">
+    <BrowserRouter basename={isGitHubPagesPath ? '/Smartcity' : undefined}>
       <App />
     </BrowserRouter>
   </StrictMode>
